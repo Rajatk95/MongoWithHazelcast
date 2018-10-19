@@ -26,4 +26,15 @@ public class LookupRepository {
     datastore.save(lookupObject);
   }
 
+  public void addOrUpdateLookupObject(final LookupObject lookupObject) {
+    datastore.save(lookupObject);
+  }
+
+  public void deleteLookupObject(String id) {
+    datastore.delete(datastore.createQuery(LookupObject.class).field("id").equal(id));
+  }
+
+  public LookupObject get(String id) {
+    return datastore.createQuery(LookupObject.class).field("id").equal(id).get();
+  }
 }
