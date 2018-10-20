@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MongoDBHazelCastMultiTenant:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="MongoDBHazelCastMultiTenant-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="MongoDBHazelCastMultiTenant:war exploded" />
+    </root>
+  </artifact>
+</component>
