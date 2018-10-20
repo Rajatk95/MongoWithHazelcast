@@ -15,8 +15,6 @@ public class LookupRepository {
   @Inject
   public LookupRepository(final Datastore ds){
     this.datastore = ds;
-    /*final Morphia morphia = new Morphia();
-    this.datastore = morphia.createDatastore(new MongoClient(), "morphia_example");*/
   }
 
   public LookupObject getLookupObjectCode(final String code) {
