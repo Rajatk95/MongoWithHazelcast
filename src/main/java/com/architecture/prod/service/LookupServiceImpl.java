@@ -17,7 +17,7 @@ import java.util.List;
 
 import javax.inject.Singleton;
 
-import com.architecture.prod.repository.LookupRepository;
+import com.architecture.prod.cache.LookupCacheOperation;
 import com.google.inject.Inject;
 import com.architecture.prod.dtos.LookupObject;
 
@@ -26,11 +26,11 @@ public class LookupServiceImpl implements LookupService {
 
   private static final String TYPE = "type";
 
-  private final LookupRepository lookupRepository;
+  private final LookupCacheOperation lookupCacheOperation;
 
   @Inject
-  LookupServiceImpl(final LookupRepository lookupRepository) {
-    this.lookupRepository = lookupRepository;
+  LookupServiceImpl(final LookupCacheOperation lookupCacheOperation) {
+    this.lookupCacheOperation = lookupCacheOperation;
   }
 
   /*@Override
@@ -40,24 +40,24 @@ public class LookupServiceImpl implements LookupService {
 
   @Override
   public LookupObject getLookupObjectById(String id) {
-    return lookupRepository.get(id);
+    return lookupCacheOperation.getLookupObjectById(id);
   }
 
   @Override
   public LookupObject addLookupObject(final LookupObject lookupObject) {
-    lookupRepository.addOrUpdateLookupObject(lookupObject);
+    lookupCacheOperation.addLookupObject(lookupObject);
     return lookupObject;
   }
 
   @Override
   public LookupObject updateLookupObject(LookupObject lookupObject) {
-    lookupRepository.addOrUpdateLookupObject(lookupObject);
+    lookupCacheOperation.updateLookupObject(lookupObject);
     return lookupObject;
   }
 
   @Override
   public void deleteLookupObject(String id) {
-    lookupRepository.deleteLookupObject(id);
+    lookupCacheOperation.deleteLookupObject(id);
   }
 
 }

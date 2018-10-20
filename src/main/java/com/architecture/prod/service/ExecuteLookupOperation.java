@@ -10,7 +10,7 @@ public class ExecuteLookupOperation {
     Injector injector = Guice.createInjector(new LookupModule());
     LookupService lookupService = injector.getInstance(LookupService.class);
 
-    LookupObject lookupObject = new LookupObject("lookupObject1", "lookupObject1", "lookupObject1", "lookupObject1",
+    LookupObject lookupObject = new LookupObject("lookupObject2", "lookupObject2", "lookupObject2", "lookupObject2",
         true, 1, true);
     lookupService.addLookupObject(lookupObject);
 

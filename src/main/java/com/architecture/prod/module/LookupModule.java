@@ -13,7 +13,8 @@ public class LookupModule extends AbstractModule {
 	@Override
 	protected void configure() {
 		install(new ServletModule());
-		bind(LookupService.class).to(LookupServiceImpl.class);
+    install(new LookupCacheModule());
+    bind(LookupService.class).to(LookupServiceImpl.class);
 		bind(LookupRepository.class);
 		bind(Datastore.class).toProvider(DataStoreProvider.class);
 	}

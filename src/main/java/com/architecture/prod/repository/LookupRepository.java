@@ -1,5 +1,8 @@
 package com.architecture.prod.repository;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.mongodb.morphia.Datastore;
 
 import com.architecture.prod.dtos.LookupObject;
@@ -32,6 +35,10 @@ public class LookupRepository {
 
   public void deleteLookupObject(String id) {
     datastore.delete(datastore.createQuery(LookupObject.class).field("id").equal(id));
+  }
+
+  public List<String> findIds() {
+    return datastore.find(LookupObject.class).asList().stream().map(LookupObject::getId).collect(Collectors.toList());
   }
 
   public LookupObject get(String id) {
