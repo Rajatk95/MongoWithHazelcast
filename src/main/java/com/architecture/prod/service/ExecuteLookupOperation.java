@@ -1,14 +1,18 @@
 package com.architecture.prod.service;
 
 import com.architecture.prod.dtos.LookupObject;
-import com.architecture.prod.repository.LookupRepository;
+import com.architecture.prod.module.LookupModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 
 public class ExecuteLookupOperation {
   public static void main(String arg[]){
-    LookupRepository lookupRepository = new LookupRepository();
+    Injector injector = Guice.createInjector(new LookupModule());
+    LookupService lookupService = injector.getInstance(LookupService.class);
+
     LookupObject lookupObject = new LookupObject("lookupObject1", "lookupObject1", "lookupObject1", "lookupObject1",
         true, 1, true);
-    lookupRepository.addLookupObject(lookupObject);
+    lookupService.addLookupObject(lookupObject);
 
   }
 }

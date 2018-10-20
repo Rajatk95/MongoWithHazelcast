@@ -19,7 +19,7 @@ public class LookupRepository {
     this.datastore = morphia.createDatastore(new MongoClient(), "morphia_example");*/
   }
 
-  public LookupObject getLookupObjectByTypeAndCode(final String code) {
+  public LookupObject getLookupObjectCode(final String code) {
     return datastore.createQuery(LookupObject.class).disableValidation().field("code").equal(code).get();
   }
 
