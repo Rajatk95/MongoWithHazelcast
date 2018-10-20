@@ -1,9 +1,9 @@
 package com.architecture.prod.repository;
 
 import org.mongodb.morphia.Datastore;
-import org.mongodb.morphia.Morphia;
+
 import com.architecture.prod.dtos.LookupObject;
-import com.mongodb.MongoClient;
+import com.google.inject.Inject;
 
 public class LookupRepository {
 
@@ -12,9 +12,11 @@ public class LookupRepository {
 
   private final Datastore datastore;
 
-  public LookupRepository(){
-    final Morphia morphia = new Morphia();
-    this.datastore = morphia.createDatastore(new MongoClient(), "morphia_example");
+  @Inject
+  public LookupRepository(final Datastore ds){
+    this.datastore = ds;
+    /*final Morphia morphia = new Morphia();
+    this.datastore = morphia.createDatastore(new MongoClient(), "morphia_example");*/
   }
 
   public LookupObject getLookupObjectByTypeAndCode(final String code) {
