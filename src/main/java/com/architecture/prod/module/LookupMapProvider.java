@@ -18,8 +18,8 @@ public class LookupMapProvider implements Provider<IMap<String, LookupObject>> {
 
   @Inject
   LookupMapProvider(final LookupMapstore mapstore) {
-    this.hazelcastInstance = Hazelcast.newHazelcastInstance(createMapConfig());
     this.mapstore = mapstore;
+    this.hazelcastInstance = Hazelcast.newHazelcastInstance(createMapConfig());
   }
 
   @Override
