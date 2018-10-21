@@ -1,7 +1,5 @@
 package com.architecture.prod.module;
 
-import javax.inject.Singleton;
-
 import com.architecture.prod.cache.LookupCacheOperation;
 import com.architecture.prod.cache.LookupMapstore;
 import com.architecture.prod.dtos.LookupObject;
