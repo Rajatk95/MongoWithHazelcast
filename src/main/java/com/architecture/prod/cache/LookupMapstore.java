@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 import com.architecture.prod.repository.LookupRepository;
 import com.google.inject.Inject;
 import com.hazelcast.core.MapStore;

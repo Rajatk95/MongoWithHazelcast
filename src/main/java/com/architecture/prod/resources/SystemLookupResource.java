@@ -25,7 +25,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 import com.architecture.prod.service.LookupService;
 
 @Path("/system/lookups")
