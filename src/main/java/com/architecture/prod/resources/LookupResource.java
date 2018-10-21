@@ -29,10 +29,9 @@ import com.architecture.prod.model.LookupObject;
 import com.architecture.prod.service.LookupService;
 
 @Path("/system/lookups")
-public class SystemLookupResource {
+public class LookupResource {
 
     private final LookupService lookupService;
-    
     
     /**
      * Use to test is Web Service is working.
@@ -45,12 +44,12 @@ public class SystemLookupResource {
     }
 
     @Inject
-    public SystemLookupResource(LookupService lookupService) {
+    public LookupResource(LookupService lookupService) {
         this.lookupService = lookupService;
     }
 
     @GET
-    @Path("/{lookupType}/{lookupId}")
+    @Path("/{lookupId}")
     @Produces(APPLICATION_JSON)
     public LookupObject lookupObject(@PathParam("lookupId") String lookupId) {
         return this.lookupService.getLookupObjectById(lookupId);

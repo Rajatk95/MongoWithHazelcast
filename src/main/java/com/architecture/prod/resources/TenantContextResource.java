@@ -15,12 +15,12 @@ public class TenantContextResource {
   @GET
   @Produces(MediaType.TEXT_PLAIN)
   public String test() {
-    return TenantContext.context;
+    return TenantContext.getContext();
   }
 
   @PUT
   @Consumes(MediaType.TEXT_PLAIN)
   public void test(final String context) {
-    TenantContext.context = context;
+    TenantContext.setContext(context);
   }
 }

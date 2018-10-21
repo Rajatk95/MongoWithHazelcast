@@ -22,7 +22,7 @@ public class DataStoreProvider {
   public Datastore get() {
     final Morphia morphia = new Morphia();
     final String dbName = tenantMap.stream()
-        .filter(tenantMap1 -> tenantMap1.getTenantId().equals(TenantContext.context))
+        .filter(tenantMap1 -> tenantMap1.getTenantId().equals(TenantContext.getContext()))
         .findFirst()
         .orElse(new TenantMap("default")).getDbName();
    return morphia.createDatastore(new MongoClient(), dbName);

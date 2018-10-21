@@ -1,4 +1,4 @@
-package com.architecture.prod;
+package com.architecture.prod.module;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -10,7 +10,7 @@ import com.architecture.prod.model.TenantMap;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class TenantDBMapProvider implements Provider<List<TenantMap>> {
+public class TenantMapProvider implements Provider<List<TenantMap>> {
 
   private static final ObjectMapper MAPPER = new ObjectMapper();
   private static  final String file_path = "/multi-tenant-config.json";
