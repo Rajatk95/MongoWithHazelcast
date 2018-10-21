@@ -11,7 +11,7 @@
  * All Rights Reserved.
  */
 
-package com.architecture.prod.resources;
+package com.architecture.prod.controller;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
