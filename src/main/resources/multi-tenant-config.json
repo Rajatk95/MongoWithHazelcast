@@ -1,0 +1,10 @@
+[
+  {
+    "tenantId": "tenant1",
+    "dbName": "tenant1"
+  },
+  {
+    "tenantId": "tenant2",
+    "dbName": "tenant2"
+  }
+]

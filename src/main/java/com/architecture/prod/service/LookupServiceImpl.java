@@ -13,13 +13,11 @@
 
 package com.architecture.prod.service;
 
-import java.util.List;
-
 import javax.inject.Singleton;
 
 import com.architecture.prod.cache.LookupCacheOperation;
 import com.google.inject.Inject;
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 
 @Singleton
 public class LookupServiceImpl implements LookupService {

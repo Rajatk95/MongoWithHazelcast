@@ -1,7 +1,7 @@
 package com.architecture.prod.module;
 
 import com.architecture.prod.cache.LookupMapstore;
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import com.hazelcast.config.Config;
@@ -15,6 +15,7 @@ public class LookupMapProvider implements Provider<IMap<String, LookupObject>> {
 
   private final HazelcastInstance hazelcastInstance;
   private final LookupMapstore mapstore;
+  private final String MAP_NAME = "LOOKUPS";
 
   @Inject
   LookupMapProvider(final LookupMapstore mapstore) {
@@ -24,12 +25,12 @@ public class LookupMapProvider implements Provider<IMap<String, LookupObject>> {
 
   @Override
   public IMap<String, LookupObject> get() {
-    return hazelcastInstance.getMap("lookups");
+    return hazelcastInstance.getMap(MAP_NAME);
   }
 
   public Config createMapConfig() {
     Config config = new Config();
-    MapConfig mapConfig = new MapConfig("lookups");
+    MapConfig mapConfig = new MapConfig(MAP_NAME);
     final MapStoreConfig storeConfig = new MapStoreConfig();
     storeConfig.setImplementation(mapstore).setEnabled(true).setWriteDelaySeconds(0);
     mapConfig.setMapStoreConfig(storeConfig);

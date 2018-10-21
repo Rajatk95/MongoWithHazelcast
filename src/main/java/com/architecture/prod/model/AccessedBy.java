@@ -1,4 +1,4 @@
-package com.architecture.prod.dtos;
+package com.architecture.prod.model;
 
 public enum AccessedBy {
   SYSTEM, USER

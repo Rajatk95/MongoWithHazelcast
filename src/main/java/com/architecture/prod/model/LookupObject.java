@@ -1,4 +1,4 @@
-package com.architecture.prod.dtos;
+package com.architecture.prod.model;
 
 
 import java.io.Serializable;
