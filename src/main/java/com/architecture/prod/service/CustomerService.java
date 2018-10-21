@@ -13,16 +13,24 @@
 
 package com.architecture.prod.service;
 
-import com.architecture.prod.model.LookupObject;
+import java.util.List;
 
-public interface LookupService {
+import com.architecture.prod.model.Customer;
 
-  LookupObject getLookupObjectById(String id);
+public interface CustomerService {
 
-  LookupObject addLookupObject(LookupObject lookupObject);
+  Customer getCustomerById(String id);
 
-  LookupObject updateLookupObject(LookupObject lookupObject);
+  Customer addCustomer(Customer customer);
 
-  void deleteLookupObject(String id);
+  Customer updateCustomer(Customer customer);
+
+  void deleteCustomer(String id);
+
+  Customer getCustomerByCode(String code) throws Exception;
+
+  List<Customer> getCustomerByPhoneNumber(int number) throws Exception;
+
+  String getCustomerAddressByCode(String code) throws Exception;
 
 }

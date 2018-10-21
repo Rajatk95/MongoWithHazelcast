@@ -5,26 +5,26 @@ import java.util.List;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
-import com.architecture.prod.model.TenantContext;
-import com.architecture.prod.model.TenantMap;
+import com.architecture.prod.model.UserRegionContext;
+import com.architecture.prod.model.RegionDBMap;
 import com.google.inject.Inject;
 import com.mongodb.MongoClient;
 
 public class DataStoreProvider {
 
-  private final List<TenantMap> tenantMap;
+  private final List<RegionDBMap> regionDBMap;
 
   @Inject
-  DataStoreProvider(final List<TenantMap> tenantMap) {
-    this.tenantMap = tenantMap;
+  DataStoreProvider(final List<RegionDBMap> regionDBMap) {
+    this.regionDBMap = regionDBMap;
   }
 
   public Datastore get() {
     final Morphia morphia = new Morphia();
-    final String dbName = tenantMap.stream()
-        .filter(tenantMap1 -> tenantMap1.getTenantId().equals(TenantContext.getContext()))
+    final String dbName = regionDBMap.stream()
+        .filter(regionMap1 -> regionMap1.getRegionId().equals(UserRegionContext.getRegionId()))
         .findFirst()
-        .orElse(new TenantMap("default")).getDbName();
+        .orElse(new RegionDBMap("default")).getDbName();
    return morphia.createDatastore(new MongoClient(), dbName);
   }
 }

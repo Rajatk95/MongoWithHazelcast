@@ -5,7 +5,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 import org.jvnet.hk2.guice.bridge.api.GuiceBridge;
 import org.jvnet.hk2.guice.bridge.api.GuiceIntoHK2Bridge;
 
-import com.architecture.prod.module.LookupModule;
+import com.architecture.prod.module.CustomerModule;
 import com.google.inject.Guice;
 import javax.inject.Inject;
 import com.google.inject.Injector;
@@ -33,7 +33,7 @@ public class AppInitilizer extends ResourceConfig {
 		GuiceBridge.getGuiceBridge().initializeGuiceBridge(serviceLocator);
 
 		GuiceIntoHK2Bridge guiceBridge = serviceLocator.getService(GuiceIntoHK2Bridge.class);
-		Injector injector = Guice.createInjector(new LookupModule());
+		Injector injector = Guice.createInjector(new CustomerModule());
 		guiceBridge.bridgeGuiceInjector(injector);
 
 	}
