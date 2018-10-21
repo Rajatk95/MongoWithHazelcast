@@ -24,6 +24,7 @@ public class LookupMapProvider implements Provider<IMap<String, LookupObject>> {
 
   @Override
   public IMap<String, LookupObject> get() {
+	  
     return hazelcastInstance.getMap("lookups");
   }
 
