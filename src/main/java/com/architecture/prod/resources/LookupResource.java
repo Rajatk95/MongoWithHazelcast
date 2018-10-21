@@ -49,7 +49,7 @@ public class LookupResource {
     }
 
     @GET
-    @Path("/{lookupType}/{lookupId}")
+    @Path("/{lookupId}")
     @Produces(APPLICATION_JSON)
     public LookupObject lookupObject(@PathParam("lookupId") String lookupId) {
         return this.lookupService.getLookupObjectById(lookupId);

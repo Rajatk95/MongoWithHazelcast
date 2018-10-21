@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class TenantDBMapProvider implements Provider<List<TenantMap>> {
 
   private static final ObjectMapper MAPPER = new ObjectMapper();
-  private static  final String file_path = "/multi-tenant-config.json";
+  private static final String file_path = "/multi-tenant-config.json";
 
 
   @Override

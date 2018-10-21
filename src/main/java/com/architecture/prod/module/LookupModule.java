@@ -3,11 +3,13 @@ package com.architecture.prod.module;
 import java.util.List;
 
 import com.architecture.prod.module.TenantDBMapProvider;
+import com.architecture.prod.model.LookupTenantMapName;
 import com.architecture.prod.model.TenantMap;
 import com.architecture.prod.repository.LookupRepository;
 import com.architecture.prod.service.LookupService;
 import com.architecture.prod.service.LookupServiceImpl;
 import com.google.inject.AbstractModule;
+import com.google.inject.Exposed;
 import com.google.inject.TypeLiteral;
 import com.google.inject.servlet.ServletModule;
 
