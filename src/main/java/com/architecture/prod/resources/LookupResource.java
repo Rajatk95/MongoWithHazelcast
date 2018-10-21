@@ -29,10 +29,9 @@ import com.architecture.prod.dtos.LookupObject;
 import com.architecture.prod.service.LookupService;
 
 @Path("/system/lookups")
-public class SystemLookupResource {
+public class LookupResource {
 
     private final LookupService lookupService;
-    
     
     /**
      * Use to test is Web Service is working.
@@ -45,7 +44,7 @@ public class SystemLookupResource {
     }
 
     @Inject
-    public SystemLookupResource(LookupService lookupService) {
+    public LookupResource(LookupService lookupService) {
         this.lookupService = lookupService;
     }
 

@@ -7,6 +7,12 @@ import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.hazelcast.core.IMap;
 
+/**
+ * Guice Bindings related to Hazelcast IMap are here.
+ * @CalledFrom LookupModule.java
+ * @author RajatKhandelwal
+ *
+ */
 public class LookupCacheModule extends AbstractModule {
 
   @Override

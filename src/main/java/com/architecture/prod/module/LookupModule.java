@@ -8,6 +8,15 @@ import com.architecture.prod.service.LookupServiceImpl;
 import com.google.inject.AbstractModule;
 import com.google.inject.servlet.ServletModule;
 
+/**
+ * This class is called before the application is initializes. All the guice
+ * bindings are initialized here and all the modules are installed.
+ * 
+ * @CalledFrom AppInitilizer.java
+ * @category Module
+ * @author RajatKhandelwal
+ *
+ */
 public class LookupModule extends AbstractModule {
 
 	@Override

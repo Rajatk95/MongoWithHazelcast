@@ -11,6 +11,10 @@ public class LookupCacheOperation {
 
   private final IMap<String, LookupObject> map ;
 
+  /**
+   * Gets the Object of Hazelcast map thru Guice bindings in LookupCacheModule.java
+   * @param map
+   */
   @Inject
   LookupCacheOperation(IMap<String, LookupObject> map) {
     this.map = map;
