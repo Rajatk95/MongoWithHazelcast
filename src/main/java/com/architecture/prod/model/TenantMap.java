@@ -1,6 +1,7 @@
 package com.architecture.prod.model;
 
 public class TenantMap {
+
 	String tenantId;
 	String dbName;
 
@@ -32,3 +33,4 @@ public class TenantMap {
 		this.dbName = dbName;
 	}
 }
+

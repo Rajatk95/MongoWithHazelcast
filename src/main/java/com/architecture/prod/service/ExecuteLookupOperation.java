@@ -1,6 +1,6 @@
 package com.architecture.prod.service;
 
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 import com.architecture.prod.module.LookupModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;

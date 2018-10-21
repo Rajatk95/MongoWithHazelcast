@@ -13,9 +13,7 @@
 
 package com.architecture.prod.service;
 
-import java.util.List;
-
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 
 public interface LookupService {
 

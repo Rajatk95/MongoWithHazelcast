@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.architectures.prod</groupId>
@@ -31,8 +31,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 
-		<!-- Version Properties -->
-		<logback.version>1.1.7</logback.version>
+    <!-- Version Properties -->
+    <logback.version>1.1.7</logback.version>
 		<javax.ws.rs.version>2.0.1</javax.ws.rs.version>
 		<guice.version>4.1.0</guice.version>
 		<jersey.version>2.24</jersey.version>
@@ -55,7 +55,7 @@
 
 	<dependencies>
 		<!--JERSEY - For creating Rest Endpoints -->
-		<dependency>
+    <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.8.6</version>
@@ -107,8 +107,8 @@
 			<version>2.24</version>
 		</dependency>
 
-		<!--Guice - For Dependency Injections -->
-		<dependency>
+    <!--Guice - For Dependency Injections -->
+    <dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
 			<version>4.1.0</version>
@@ -129,25 +129,32 @@
 			<version>2.5.0-b27</version>
 		</dependency>
 
-		<!--Hazelcase - A Caching service and enables Muti Tenancy. -->
-		<dependency>
+    <!--Hazelcase - A Caching service and enables Muti Tenancy. -->
+    <dependency>
 			<groupId>com.hazelcast</groupId>
 			<artifactId>hazelcast-all</artifactId>
 			<version>3.5.1</version>
 		</dependency>
 
-		<!-- Mongodb - Java Driver -->
-		<dependency>
+    <!-- Mongodb - Java Driver -->
+    <dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
 			<version>3.2.0</version>
 		</dependency>
 
-		<!-- Morphia - For Mongo Queries -->
-		<dependency>
+    <!-- Morphia - For Mongo Queries -->
+    <dependency>
 			<groupId>org.mongodb.morphia</groupId>
 			<artifactId>morphia</artifactId>
 			<version>1.2.1</version>
+		</dependency>
+
+    <!-- JSON Parser -->
+    <dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 	</dependencies>
 

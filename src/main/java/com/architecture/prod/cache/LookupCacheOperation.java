@@ -1,6 +1,6 @@
 package com.architecture.prod.cache;
 
-import com.architecture.prod.dtos.LookupObject;
+import com.architecture.prod.model.LookupObject;
 import com.google.inject.Inject;
 import com.hazelcast.core.IMap;
 import com.hazelcast.query.EntryObject;
