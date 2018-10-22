@@ -20,7 +20,7 @@ Multi Tenancy refers to single instance of application is running which servers 
 2. Jersey (2.X)
 3. [Hazelcast](https://docs.hazelcast.org/docs/3.3/manual/html-single/hazelcast-documentation.html#introduction "Hazelcast Introduction")
 4. [MongoDB](https://docs.mongodb.com/ "MongoDB Docs")
-5. [Morphia](http://morphiaorg.github.io/morphia/1.3/ "Getting Started Morphia") to fire mongo DB queries.
+5. [Morphia](http://morphiaorg.github.io/morphia/1.3/ "Getting Started Morphia") to fire Mongo DB queries.
 6. [Guice](https://github.com/google/guice) for dependency injection
  
 ## Three strategies to handle multi tenancy
