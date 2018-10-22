@@ -16,7 +16,6 @@ import com.google.inject.servlet.ServletModule;
  * 
  * @CalledFrom AppInitilizer.java
  * @category Module
- * @author RajatKhandelwal
  *
  */
 public class CustomerModule extends AbstractModule {

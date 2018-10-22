@@ -19,5 +19,4 @@ public interface CustomerService {
   List<Customer> getCustomerByPhoneNumber(int number) throws Exception;
 
   String getCustomerAddressByCode(String code) throws Exception;
-
 }

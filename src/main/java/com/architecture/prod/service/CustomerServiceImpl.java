@@ -8,10 +8,11 @@ import com.architecture.prod.cache.CustomerCacheOperation;
 import com.architecture.prod.model.Customer;
 import com.google.inject.Inject;
 
+/**
+ * Get and Update customer data from Hazelcast Map
+ */
 @Singleton
 public class CustomerServiceImpl implements CustomerService {
-
-  private static final String TYPE = "type";
 
   private final CustomerCacheOperation customerCacheOperation;
 

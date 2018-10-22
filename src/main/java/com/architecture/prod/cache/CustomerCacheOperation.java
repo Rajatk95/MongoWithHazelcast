@@ -11,6 +11,10 @@ import com.hazelcast.query.EntryObject;
 import com.hazelcast.query.Predicate;
 import com.hazelcast.query.PredicateBuilder;
 
+/**
+ * Perform operations on Hazelcast map
+ */
+
 public class CustomerCacheOperation {
 
   private final CustomerMapProvider customerMapProvider;
@@ -26,6 +30,9 @@ public class CustomerCacheOperation {
   }
 
   public Customer getCustomerById(String id) {
+    /**
+     * customerMapProvider.get() provide the Hazelcast map on the basis of user context
+     */
     return customerMapProvider.get().get(id);
   }
 

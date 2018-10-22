@@ -11,7 +11,9 @@ import org.mongodb.morphia.annotations.Index;
 import org.mongodb.morphia.annotations.IndexOptions;
 import org.mongodb.morphia.annotations.Indexes;
 
-
+/**
+ * Structure of the customer data
+ */
 @Entity("customer")
 // Compound unique index for faster db operations
 @Indexes(@Index(fields = {@Field("code"), @Field("address")}, options = @IndexOptions(unique = true)))

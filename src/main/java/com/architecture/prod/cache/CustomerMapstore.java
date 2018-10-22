@@ -9,6 +9,10 @@ import com.architecture.prod.repository.CustomerRepository;
 import com.google.inject.Inject;
 import com.hazelcast.core.MapStore;
 
+/**
+ * Interacts with repository if value is not present in the map or
+ * when put operation is being applied in the map
+ */
 public class CustomerMapstore implements MapStore<String, Customer> {
   private final CustomerRepository customerRepository;
 

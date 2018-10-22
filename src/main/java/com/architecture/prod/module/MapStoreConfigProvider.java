@@ -6,6 +6,10 @@ import com.google.inject.Inject;
 import com.hazelcast.config.MapStoreConfig;
 import javax.inject.Provider;
 
+/**
+ * Provides MapStoreConfig
+ * @Called from CustomerCacheModule
+ */
 public class MapStoreConfigProvider implements Provider<MapStoreConfig> {
 
 	private final CustomerMapstore customerMapstore;
