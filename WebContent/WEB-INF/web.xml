@@ -6,7 +6,7 @@
 
 	<display-name>Archetype Created Web Application</display-name>
 	<servlet>
-		<servlet-name>MongoDBHazelCastMultiTenantSystem</servlet-name>
+		<servlet-name>MongoDBHazelCastMultiTenancySystem</servlet-name>
 		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
@@ -23,7 +23,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>MongoDBHazelCastMultiTenantSystem</servlet-name>
+		<servlet-name>MongoDBHazelCastMultiTenancySystem</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 </web-app>
