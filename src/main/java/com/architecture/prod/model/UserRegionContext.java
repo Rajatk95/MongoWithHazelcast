@@ -1,5 +1,9 @@
 package com.architecture.prod.model;
 
+/**
+ * To Store currently accessing user context
+ */
+
 public final class UserRegionContext {
 	
 	private static String regionId = "default";

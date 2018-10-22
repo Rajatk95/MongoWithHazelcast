@@ -10,6 +10,10 @@ import com.architecture.prod.model.RegionDBMap;
 import com.google.inject.Inject;
 import com.mongodb.MongoClient;
 
+/**
+ * Provide DataStore instance on the basis of User context
+ * if there is no user context set then create a dataStore instance of default database
+ */
 public class DataStoreProvider {
 
   private final List<RegionDBMap> regionDBMap;

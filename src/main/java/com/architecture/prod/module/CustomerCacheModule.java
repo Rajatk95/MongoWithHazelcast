@@ -9,15 +9,14 @@ import com.hazelcast.config.MapStoreConfig;
 /**
  * Guice Bindings related to Hazelcast IMap are here.
  * @CalledFrom CustomerModule.java
- * @author RajatKhandelwal
  *
  */
 public class CustomerCacheModule extends AbstractModule {
 
   @Override
   protected void configure() {
-	bind(CustomerRegionMapName.class).asEagerSingleton();
-	bind(CustomerMapProvider.class);
+	  bind(CustomerRegionMapName.class).asEagerSingleton();
+	  bind(CustomerMapProvider.class);
     bind(CustomerCacheOperation.class);
     bind(CustomerMapstore.class);
     bind(MapStoreConfig.class).toProvider(MapStoreConfigProvider.class);

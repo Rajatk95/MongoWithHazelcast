@@ -10,6 +10,10 @@ import com.architecture.prod.model.RegionDBMap;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * Reads the Json file multi-tenancy-config.json
+ * which has the array of [{RegionId, DBName}]
+ */
 public class RegionDBMapProvider implements Provider<List<RegionDBMap>> {
 
   private static final ObjectMapper MAPPER = new ObjectMapper();

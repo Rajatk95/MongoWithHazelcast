@@ -1,16 +1,3 @@
-/*
- * This material is the confidential, unpublished property
- * of Fair Isaac Corporation.  Receipt or possession
- * of this material does not convey rights to divulge,
- * reproduce, use, or allow others to use it without
- * the specific written authorization of Fair Isaac
- * Corporation and use must conform strictly to the
- * license agreement.
- *
- * Copyright (c) Fair Isaac Corporation, 2016
- * All Rights Reserved.
- */
-
 package com.architecture.prod.service;
 
 import java.util.List;
@@ -21,10 +8,11 @@ import com.architecture.prod.cache.CustomerCacheOperation;
 import com.architecture.prod.model.Customer;
 import com.google.inject.Inject;
 
+/**
+ * Get and Update customer data from Hazelcast Map
+ */
 @Singleton
 public class CustomerServiceImpl implements CustomerService {
-
-  private static final String TYPE = "type";
 
   private final CustomerCacheOperation customerCacheOperation;
 

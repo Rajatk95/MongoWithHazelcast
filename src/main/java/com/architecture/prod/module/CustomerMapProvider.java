@@ -11,6 +11,11 @@ import com.hazelcast.core.Hazelcast;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.IMap;
 
+/**
+ * Create Map config according to the tenant
+ * Provide Hazelcast IMap according to the user context
+ */
+
 public class CustomerMapProvider {
 
 	private final HazelcastInstance hazelcastInstance;

@@ -1,5 +1,9 @@
 package com.architecture.prod.model;
 
+/**
+ * Object to store regionId and its DBName
+ */
+
 public class RegionDBMap {
 
 	private final String regionId;
