@@ -1,16 +1,3 @@
-/*
- * This material is the confidential, unpublished property
- * of Fair Isaac Corporation.  Receipt or possession
- * of this material does not convey rights to divulge,
- * reproduce, use, or allow others to use it without
- * the specific written authorization of Fair Isaac
- * Corporation and use must conform strictly to the
- * license agreement.
- *
- * Copyright (c) Fair Isaac Corporation, 2016
- * All Rights Reserved.
- */
-
 package com.architecture.prod.controller;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
@@ -30,70 +17,97 @@ import javax.ws.rs.core.MediaType;
 import com.architecture.prod.model.Customer;
 import com.architecture.prod.service.CustomerService;
 
+/**
+ * Rest Endpoints are exposed here to add, remove, get customer information
+ */
 @Path("/customer")
 public class CustomerController {
 
-    private final CustomerService customerService;
-    
-    /**
-     * Use to test is Web Service is working.
-     */
-    @GET
-    @Path("/test")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String test() {
-    	return "its working.....";
-    }
+	private final CustomerService customerService;
 
-    @Inject
-    public CustomerController(CustomerService customerService) {
-        this.customerService = customerService;
-    }
+	/**
+	 * Use to test is Web Service is working.
+	 */
+	@GET
+	@Path("/test")
+	@Produces(MediaType.TEXT_PLAIN)
+	public String test() {
+		return "its working.....";
+	}
 
-    @GET
-    @Path("/{customerId}")
-    @Produces(APPLICATION_JSON)
-    public Customer getCustomer(@PathParam("customerId") String customerId) {
-        return this.customerService.getCustomerById(customerId);
-    }
+	@Inject
+	public CustomerController(final CustomerService customerService) {
+		this.customerService = customerService;
+	}
 
-    @POST
-    @Produces(APPLICATION_JSON)
-    public void addCustomer(Customer customer) {
-        customerService.addCustomer(customer);
-    }
+	/**
+	 * Get customer data on the basis of customer id, if the data is not present in
+	 * cache, data is fetched from database.
+	 * 
+	 * @param customerId
+	 * @return Customer
+	 */
+	@GET
+	@Path("/{customerId}")
+	@Produces(APPLICATION_JSON)
+	public Customer getCustomer(@PathParam("customerId") final String customerId) {
+		return this.customerService.getCustomerById(customerId);
+	}
 
-    @PUT
-    @Produces(APPLICATION_JSON)
-    public Customer updateCustomer(Customer customer) {
-        return customerService.updateCustomer(customer);
-    }
+	/**
+	 * Add Customer, The Customer and its data is inserted in the cache and the
+	 * database
+	 * 
+	 * @param customer
+	 */
+	@POST
+	@Produces(APPLICATION_JSON)
+	public void addCustomer(final Customer customer) {
+		customerService.addCustomer(customer);
+	}
 
-    @DELETE
-    @Path("/{customerId}")
-    @Produces(APPLICATION_JSON)
-    public void deleteCustomer(@PathParam("customerId") String customerId) {
-        customerService.deleteCustomer(customerId);
-    }
+	/**
+	 * Update Customer Data, Data for the customer is updated in the cache as well
+	 * as database.
+	 * 
+	 * @param Customer
+	 * @return Customer
+	 */
+	@PUT
+	@Produces(APPLICATION_JSON)
+	public Customer updateCustomer(final Customer customer) {
+		return customerService.updateCustomer(customer);
+	}
 
-    @GET
-    @Path("/code/{customerCode}")
-    @Produces(APPLICATION_JSON)
-    public Customer getCustomerByCode(@PathParam("customerCode") String customerCode) throws Exception{
-        return this.customerService.getCustomerByCode(customerCode);
-    }
+	/**
+	 * Delete Customer
+	 * @param customerId
+	 */
+	@DELETE
+	@Path("/{customerId}")
+	@Produces(APPLICATION_JSON)
+	public void deleteCustomer(@PathParam("customerId") final String customerId) {
+		customerService.deleteCustomer(customerId);
+	}
 
-    @GET
-    @Path("/phoneNumber/{phoneNumber}")
-    @Produces(APPLICATION_JSON)
-    public List<Customer> getCustomerByPhoneNumber(@PathParam("phoneNumber") int phoneNumber) throws Exception{
-        return this.customerService.getCustomerByPhoneNumber(phoneNumber);
-    }
+	@GET
+	@Path("/code/{customerCode}")
+	@Produces(APPLICATION_JSON)
+	public Customer getCustomerByCode(@PathParam("customerCode") final String customerCode) throws Exception {
+		return this.customerService.getCustomerByCode(customerCode);
+	}
 
-    @GET
-    @Path("/address/{customerCode}")
-    @Produces(APPLICATION_JSON)
-    public String getCustomerAddress(@PathParam("customerCode") String customerCode) throws Exception{
-        return this.customerService.getCustomerAddressByCode(customerCode);
-    }
+	@GET
+	@Path("/phoneNumber/{phoneNumber}")
+	@Produces(APPLICATION_JSON)
+	public List<Customer> getCustomerByPhoneNumber(@PathParam("phoneNumber") final int phoneNumber) throws Exception {
+		return this.customerService.getCustomerByPhoneNumber(phoneNumber);
+	}
+
+	@GET
+	@Path("/address/{customerCode}")
+	@Produces(APPLICATION_JSON)
+	public String getCustomerAddress(@PathParam("customerCode") final String customerCode) throws Exception {
+		return this.customerService.getCustomerAddressByCode(customerCode);
+	}
 }

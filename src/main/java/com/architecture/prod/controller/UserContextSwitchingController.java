@@ -9,18 +9,24 @@ import javax.ws.rs.core.MediaType;
 
 import com.architecture.prod.model.UserRegionContext;
 
+/**
+ * Since the login, logout and session handling is not done in this project, To
+ * test multi tenancy user needs to manualy set the context and then fire a
+ * query.
+ *
+ */
 @Path("/userContext")
 public class UserContextSwitchingController {
 
-  @GET
-  @Produces(MediaType.TEXT_PLAIN)
-  public String test() {
-    return UserRegionContext.getRegionId();
-  }
+	@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getContext() {
+		return UserRegionContext.getRegionId();
+	}
 
-  @PUT
-  @Consumes(MediaType.TEXT_PLAIN)
-  public void test(final String context) {
-    UserRegionContext.setRegionId(context);
-  }
+	@PUT
+	@Consumes(MediaType.TEXT_PLAIN)
+	public void SetContext(final String context) {
+		UserRegionContext.setRegionId(context);
+	}
 }
