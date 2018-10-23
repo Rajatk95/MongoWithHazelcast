@@ -35,9 +35,11 @@ public class CustomerMapProvider {
 
 	public Config createMapConfig() {
 		Config config = new Config();
-		MapConfig mapConfig = new MapConfig(customerRegionMapName.getRegionCutomerMapName().get(UserRegionContext.getRegionId()));
-		mapConfig.setMapStoreConfig(storeConfig);
-		config.addMapConfig(mapConfig);
+		customerRegionMapName.getRegionCutomerMapName().entrySet().forEach(regionMapName -> {
+			MapConfig mapConfig = new MapConfig(regionMapName.getValue());
+			mapConfig.setMapStoreConfig(storeConfig);
+			config.addMapConfig(mapConfig);
+		});
 		return config;
 	}
 }
